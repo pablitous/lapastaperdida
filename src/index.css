@@ -1,13 +1,61 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vmin;
+  background-color: #333;
+  padding: 60px;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #000;
+}
+.form-input,
+.form-select {
+  padding: 8px; /* Adjust the padding as per your desired size */
+  border: none;
+  border-radius: 5px;
+  background-color: #eee;
+  color: #000;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.submit-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #1e1e1e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100; /* Asegura que el pie de página se muestre por encima del contenido */
+}
+
+.ToolbarHeader {
+  height: 50px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center;
 }
