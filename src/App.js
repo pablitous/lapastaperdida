@@ -6,6 +6,7 @@ import Footer from './footer';
 import Header from './header';
 import Alert from './alert';
 import './App.css';
+import configData from "./.config.json";
 
 const App = () => {
   const [dni, setDNI] = useState('');
@@ -28,7 +29,7 @@ const App = () => {
 
   const fetchOrganismList = async () => {
     try {
-      const response = await fetch('http://onebyte.ddns.net:8000/api/organisms/');
+      const response = await fetch(configData.api_url+'/api/organisms/');
       const data = await response.json();
       setOrganismList(data.data.data);
     } catch (error) {
@@ -42,7 +43,7 @@ const App = () => {
       return; // Prevent submit if any of the values is blank
     }
     try {
-      const response = await fetch(`http://onebyte.ddns.net:8000/api/salary/?name=${name}&dni=${dni}&organism=${organism}`);
+      const response = await fetch(configData.api_url+`/api/salary/?name=${name}&dni=${dni}&organism=${organism}`);
       const data = await response.json();
       if (data.data.Cantidad !== 0) {
         setResults(data.data.data);
