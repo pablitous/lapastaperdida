@@ -29,7 +29,7 @@ const App = () => {
 
   const fetchOrganismList = async () => {
     try {
-      const response = await fetch(configData.api_url+'/api/organisms/');
+      const response = await fetch(configData.api_url+'/organisms/');
       const data = await response.json();
       setOrganismList(data.data.data);
     } catch (error) {
@@ -43,7 +43,7 @@ const App = () => {
       return; // Prevent submit if any of the values is blank
     }
     try {
-      const response = await fetch(configData.api_url+`/api/salary/?name=${name}&dni=${dni}&organism=${organism}`);
+      const response = await fetch(configData.api_url+`/salary/?name=${name}&dni=${dni}&organism=${organism}`);
       const data = await response.json();
       if (data.data.Cantidad !== 0) {
         setResults(data.data.data);
